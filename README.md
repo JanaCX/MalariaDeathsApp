@@ -9,7 +9,7 @@ This App uses the data reported by the [WHO] [1] on the number of reported death
 ### The UI
 The App takes two inputs (Year and Threshold) and displays:  
 
-- A plot of the number of deaths due to Malaria in all the countries whose count exceeds the selected threshold. The range of thresholds shown in the App was selected based on the third quartile values for the entire dataset. The largest proportion of cases (~90%) occurs in a few countries, thus quartile was chosen to represent the countries with the most cases  
+- A plot of the number of deaths due to Malaria in all the countries whose count exceeds the selected threshold. The range of thresholds shown in the App was selected based on the third quartile values for the entire dataset. The largest proportion of cases (~90%) occurs in a few countries, thus the quartile was chosen to represent the countries with the most cases  
 - A table of the countries included in the plot  
 - A statistical summary of the number of deaths in the selected year. This summary is intended to guide the user to have a perspective of the global trends for a particular year  
 
