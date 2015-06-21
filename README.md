@@ -2,7 +2,7 @@
 *ShinyApp Project for Data Products (Coursera Data Sc Specialization)*
 
 ## Data
-This App uses the data reported by the WHO [WHO data] [1] on the number of reported deaths due to Malaria in 82 countries during the period 2010-2012.  
+This App uses the data reported by the [WHO] [1] on the number of reported deaths due to Malaria in 82 countries during the period 2010-2012.  
 
 ## App Structure 
 
@@ -21,9 +21,9 @@ Once the entire databse (2000-2012) is read, the app subsets the data isolating 
 A second subset is taken based on the selected threshold, this subset is passed to the plot and talbe sections.  
 
 ## Additional documentation 
-The presentation file reviews in more details the motivation and intended impact of this preliminary analysis. 
+The presentation file reviews in more detail the motivation and intended impact of this preliminary analysis. 
 
 
 
-[1]: http://apps.who.int/gho/data/node.main.A1367?lang=en "WHO data"   
+[1]: http://apps.who.int/gho/data/node.main.A1367?lang=en "WHO"   
 [2]: http://www.who.int/gho/malaria/en/ "Global Health Observatory"
