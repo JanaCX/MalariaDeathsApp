@@ -16,7 +16,7 @@ The App takes two inputs (Year and Threshold) and displays:
 For more information about advances in Malaria, trends, control, diagnosis and treatment, consult the [Global Health Observatory] [2]
 
 ### The Server  
-Once the entire databse (2000-2012) is read, the app subsets the data isolating only the desired year. This first subset is used to claculate the yearly summary.
+Once the entire databse (2000-2012) is read, the app subsets the data isolating only the desired year. This first subset is used to calculate the yearly summary.
 
 A second subset is taken based on the selected threshold, this subset is passed to the plot and talbe sections.  
 

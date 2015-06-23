@@ -1,0 +1,67 @@
+Malaria App: Visualizing Number of Deaths due to Malaria
+========================================================
+author: JanaCX
+date: 
+
+
+<small>
+*Data and general information sources:*  
+The World Health organization (http://www.who.int/gho/malaria/en/)  
+Johns Hopkins University Malaria Research Center (http://malaria.jhsph.edu)
+</small>
+
+Malaria Facts
+========================================================
+
+- Malaria is a preventable disease transmitted via the bites of infected mosquitoes, that is endemic to tropical areas    
+- In the human body, the parasite infects red blood cells causing fever, headache and vomiting and can quickly become life-threatening  
+- 584 000 estimated deaths in 2013, mostly children under 5  
+- 198 million estimated cases in 2013   
+- 97 countries and territories have on-going malaria transmission (2014)
+
+On-going issues
+=========================
+1. *Inadequate resources*. US$2.7 billion in funding allocated *vs.* US$5.1 billion needed
+2. *Multi-level approach needed*. Prevention, control and treatment
+3. *Assessment of research efforts*. 
+ - Official sources rely on local agencies to report and collect data, introducing a large mistmatch between confirmed cases and deaths and the estimated cases and deaths.
+ - Changes in number of reported cases can be due to: better diagnosis methods, better record keeping, actual changes in number of people affected due to better prevention or treatment
+ - Analysis of reported data to avoid misleading interpretations (see the apparent increase in number of cases in the following plot)
+
+Superficial Analysis can be misleading
+========================================================
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(tidyr)
+library(reshape2)
+dataMal <- readRDS("./data/malariadata.rds")
+years <- readRDS("./data/years.rds")
+casesMal<-readRDS("./data/casesMal.rds")
+
+# Plot total cases and deaths
+totals <- colSums(dataMal[2:14], na.rm = 1)
+totcases <- colSums(casesMal[2:14], na.rm = 1)
+totalData <- data.frame("Year" = years, "TotalDeaths" = totals, "TotalCases" = totcases)
+
+totalData <- melt(totalData, id.vars = "Year")
+
+p <- ggplot(totalData, aes(Year, value, col = variable))
+p + geom_point(size = 4) + labs(x = "Year", y = "Count") + theme (axis.text =element_text(size = 16), axis.title =element_text(size=20)) + guides(fill = FALSE) + scale_y_log10()
+```
+
+The Malaria App
+========================================================
+
+![alt text](ScreenShot.png)
+
+***
+
+The first of many steps to a Malaria data visualization tool.    
+Helping the user identify the countries with the highest number of reported deaths in the period 2000-2012.   
+
+***
+
+<small>
+https://janacx.shinyapps.io/MalariaDeathsApp
+</small>
